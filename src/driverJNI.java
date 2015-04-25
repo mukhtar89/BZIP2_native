@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class driverJNI {
 	
 	static {
-	      System.loadLibrary("BZIP2"); // hello.dll (Windows) or libhello.so (Unixes)
+	      System.loadLibrary("bzip2"); // hello.dll (Windows) or libhello.so (Unixes)
 	   }
 	public native boolean compress(String src,String dest,int levelOfCompression);
 	 public native boolean decompress(String src,String dest,int levelOfDecompression);
