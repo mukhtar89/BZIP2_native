@@ -66,7 +66,7 @@ public class driverJNI {
 	public static Boolean compression(String src,String dest,int level) throws FileNotFoundException{
 		driverJNI comp=new driverJNI();
 		Boolean CONFIRMATION;
-		if(new File(src).exists()&&new File(dest).exists()){
+		if(new File(src).exists()|| new File(dest).exists()){
 			System.out.println("File Exists");
 			CONFIRMATION=comp.compress(src,dest,level);
 			
@@ -80,7 +80,7 @@ public class driverJNI {
 	   public static Boolean decompression(String src,String dest,int level) throws FileNotFoundException{
 		   driverJNI decomp=new driverJNI();
 		   Boolean CONFIRMATION;
-		   if(new File(src).exists()&&new File(dest).exists()){
+		   if(new File(src).exists() || new File(dest).exists()){
 			System.out.println("File Exists");
 			CONFIRMATION=decomp.decompress(src,dest,level);
 			

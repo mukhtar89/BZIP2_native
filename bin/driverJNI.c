@@ -10,11 +10,13 @@ JNIEXPORT jboolean JNICALL Java_driverJNI_compress
 {
 	char *nativesrc = (*env)->GetStringUTFChars(env, src, 0);
 	char *nativedest = (*env)->GetStringUTFChars(env, dest, 0);
+	jboolean status;
 
-	return compress (nativesrc, nativedest, (int) level);
+	status = (jboolean)compress (nativesrc, nativedest, (int)level);
 
 	(*env)->ReleaseStringUTFChars(env, src, nativesrc);
 	(*env)->ReleaseStringUTFChars(env, dest, nativedest);
+	return status;
 }
 
 JNIEXPORT jboolean JNICALL Java_driverJNI_decompress
@@ -22,11 +24,13 @@ JNIEXPORT jboolean JNICALL Java_driverJNI_decompress
 {
 	char *nativesrc = (*env)->GetStringUTFChars(env, src, 0);
 	char *nativedest = (*env)->GetStringUTFChars(env, dest, 0);
+	jboolean status;
 
-	return decompress (nativesrc, nativedest, (int) level);
+	status = (jboolean)decompress (nativesrc, nativedest, (int)level);
 
 	(*env)->ReleaseStringUTFChars(env, src, nativesrc);
 	(*env)->ReleaseStringUTFChars(env, dest, nativedest);
+	return status;
 }
 
 #ifdef __cplusplus
