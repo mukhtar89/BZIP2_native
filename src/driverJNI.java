@@ -30,9 +30,7 @@ public class driverJNI {
 			while(src.isEmpty()) {
 				src=sc.nextLine();
 			}
-			System.out.println("Enter The Destination path");
-			while(dest.isEmpty())
-			dest=sc.nextLine();
+			dest = src + ".bz2";
 			try {
 				CONFIRMATION=compression(src, dest,level);
 			} catch (FileNotFoundException e) {
@@ -48,9 +46,7 @@ public class driverJNI {
 			while(src.isEmpty()) {
 				src=sc.nextLine();
 			}
-			System.out.println("Enter The Destination path");
-			while(dest.isEmpty())
-			dest=sc.nextLine();
+			dest = src.substring(0, src.length()-4);
 			try {
 				CONFIRMATION=decompression(src, dest,level);
 			} catch (FileNotFoundException e) {
